@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictor de IMC con IA</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.18.0/dist/tf.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Predictor de IMC con Regresión Lineal</h1>
+            <p>Esta aplicación utiliza un modelo de machine learning para predecir tu Índice de Masa Corporal</p>
+        </header>
+
+        <div class="calculator">
+            <div class="input-group">
+                <label for="height">Altura (cm):</label>
+                <input type="number" id="height" placeholder="Ej. 175" min="100" max="250">
+            </div>
+
+            <div class="input-group">
+                <label for="weight">Peso (kg):</label>
+                <input type="number" id="weight" placeholder="Ej. 70" min="30" max="200">
+            </div>
+
+            <button id="calculate-btn">Calcular IMC</button>
+
+            <div id="result" class="hidden">
+                <h3>Resultados</h3>
+                <div class="result-item">
+                    <span>IMC Calculado:</span>
+                    <span id="bmi-calculated"></span>
+                </div>
+                <div class="result-item">
+                    <span>IMC Predicho por el modelo:</span>
+                    <span id="bmi-predicted"></span>
+                </div>
+                <div class="result-item">
+                    <span>Clasificación:</span>
+                    <span id="bmi-classification"></span>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="bmi-chart"></canvas>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>¿Cómo funciona?</h2>
+            <p>Este proyecto utiliza un modelo de regresión lineal entrenado con datos sintéticos para predecir el Índice de Masa Corporal (IMC).</p>
+            <p>El modelo fue implementado usando TensorFlow.js y se ejecuta directamente en tu navegador.</p>
+            
+            <h3>Clasificación OMS</h3>
+            <table class="bmi-table">
+                <thead>
+                    <tr>
+                        <th>IMC</th>
+                        <th>Clasificación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&lt; 18.5</td>
+                        <td>Bajo peso</td>
+                    </tr>
+                    <tr>
+                        <td>18.5 - 24.9</td>
+                        <td>Peso normal</td>
+                    </tr>
+                    <tr>
+                        <td>25 - 29.9</td>
+                        <td>Sobrepeso</td>
+                    </tr>
+                    <tr>
+                        <td>&gt;= 30</td>
+                        <td>Obesidad</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

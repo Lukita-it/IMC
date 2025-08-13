@@ -1,0 +1,158 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --danger-color: #e74c3c;
+    --warning-color: #f39c12;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+    --gray-color: #95a5a6;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+h1, h2, h3 {
+    color: var(--dark-color);
+}
+
+.calculator {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#result {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    display: none;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.result-item span:first-child {
+    font-weight: 600;
+}
+
+.chart-container {
+    margin-top: 30px;
+    height: 300px;
+}
+
+.bmi-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.bmi-table th, .bmi-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.bmi-table th {
+    background-color: var(--dark-color);
+    color: white;
+}
+
+.bmi-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Clases para las clasificaciones de IMC */
+.underweight {
+    color: var(--primary-color);
+}
+
+.normal {
+    color: var(--secondary-color);
+}
+
+.overweight {
+    color: var(--warning-color);
+}
+
+.obesity {
+    color: var(--danger-color);
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .calculator {
+        padding: 20px;
+    }
+}
